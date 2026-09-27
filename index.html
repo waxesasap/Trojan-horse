@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👉🏼👈🏼</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="card">
+        <p class="small-text">SATURDAY • 26.09.2026</p>
+
+        <h1>No dobra...</h1>
+
+        <h2>Jak oceniasz nasze spotkanie? 👀</h2>
+
+        <div class="buttons">
+          <button
+            class="btn yes-btn"
+            id="yesBtn"
+            onclick="window.location.href = 'summary.html'"
+          >
+            ZAJEBISTE
+          </button>
+
+          <button class="btn no-btn" id="noBtn">SŁABE</button>
+        </div>
+
+        <p class="hint">jedna z tych odpowiedzi jest podejrzanie niedostępna</p>
+      </div>
+    </main>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+
+      function moveButton() {
+        const buttonWidth = noBtn.offsetWidth;
+        const buttonHeight = noBtn.offsetHeight;
+
+        const maxX = window.innerWidth - buttonWidth - 20;
+        const maxY = window.innerHeight - buttonHeight - 20;
+
+        const randomX = Math.max(20, Math.random() * maxX);
+
+        const randomY = Math.max(20, Math.random() * maxY);
+
+        noBtn.style.position = "fixed";
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+      }
+
+      noBtn.addEventListener("mouseenter", moveButton);
+
+      noBtn.addEventListener("touchstart", function (event) {
+        event.preventDefault();
+        moveButton();
+      });
+
+      noBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        moveButton();
+      });
+    </script>
+  </body>
+</html>

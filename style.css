@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: white;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+
+  text-align: center;
+}
+
+.small-text {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #777;
+
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: clamp(40px, 10vw, 60px);
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: clamp(19px, 5vw, 24px);
+  font-weight: 400;
+  line-height: 1.4;
+
+  color: #cfcfcf;
+
+  margin-bottom: 45px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.btn {
+  border: none;
+
+  padding: 16px 28px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.yes-btn {
+  background: white;
+  color: #111;
+}
+
+.yes-btn:hover {
+  transform: scale(1.07);
+  background: #eeeeee;
+}
+
+.no-btn {
+  background: #242424;
+  color: #aaa;
+
+  z-index: 10;
+}
+
+.hint {
+  margin-top: 35px;
+
+  font-size: 11px;
+  color: #555;
+
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 10px;
+  }
+
+  .small-text {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  h1 {
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    margin-bottom: 35px;
+  }
+
+  .buttons {
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 15px 22px;
+    font-size: 13px;
+  }
+}

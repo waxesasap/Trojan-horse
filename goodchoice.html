@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>buźka😘</title>
+
+    <link rel="stylesheet" href="goodchoice.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="card">
+        <p class="small-text">DECYZJA ZATWIERDZONA</p>
+
+        <h1>GOOD CHOICE.</h1>
+
+        <p class="subtitle">Wiedziałem, że podejmiesz dobrą decyzję 😌</p>
+
+        <div class="line"></div>
+
+        <p class="ending">ciąg dalszy nastąpi...</p>
+
+        <p class="tiny">PART 2 — coming soon</p>
+      </div>
+    </main>
+
+    <script>
+      const hearts = ["♡", "♥", "♡", "♡", "♥"];
+
+      function createHeart() {
+        const heart = document.createElement("span");
+
+        heart.classList.add("heart");
+
+        heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        const size = Math.random() * 14 + 12;
+
+        heart.style.fontSize = size + "px";
+
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5500);
+      }
+
+      let heartCount = 0;
+
+      const heartInterval = setInterval(() => {
+        createHeart();
+
+        heartCount++;
+
+        if (heartCount >= 25) {
+          clearInterval(heartInterval);
+        }
+      }, 120);
+    </script>
+  </body>
+</html>
